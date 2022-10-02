@@ -5,10 +5,9 @@ using UnityEngine;
 public class Shotgun : Weapon
 {
     // Start is called before the first frame update
-    void Start()
+    protected override void Start()
     {
-        elapsedInterval = weaponData.interval;
-        animator = gameObject.GetComponent<Animator>();
+        base.Start();
     }
 
     public override void Fire()
@@ -21,6 +20,7 @@ public class Shotgun : Weapon
                 GameObject.Instantiate(weaponData.bullet, firePosition.transform.position, transform.rotation * Quaternion.Euler(0, 0, 15));
                 GameObject.Instantiate(weaponData.bullet, firePosition.transform.position, transform.rotation * Quaternion.Euler(0, 0, -15));
                 animator.SetTrigger("Attack");
+                audioData.Play();
                 elapsedInterval = 0;
             }
         }

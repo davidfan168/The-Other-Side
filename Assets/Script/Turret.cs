@@ -94,13 +94,13 @@ public class Turret : MonoBehaviour, IDamageable
 
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
         
-        Quaternion rotation =  Quaternion.Euler (new Vector3(0f,0f,angle));
+        Quaternion rotation =  Quaternion.Euler (new Vector3(0f,0f,angle - 90));
         GameObject.Instantiate(bullet, turretPos, rotation);
     }
     
     private void Attack()
     {
-        timeElapsed -= Time.deltaTime;
+        timeElapsed += Time.deltaTime;
         if (timeElapsed > attackInterval)
         {
             Fire(LevelManager.Instance.GetTargetForTurret());

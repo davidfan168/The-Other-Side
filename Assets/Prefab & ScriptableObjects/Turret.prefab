@@ -135,9 +135,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c860f8d1930a4233a73142c1d43362b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 50
+  maxHealth: 500
   healthCanvas: {fileID: 1040181757183527155}
-  attackInterval: 0.5
+  attackInterval: 2
   bullet: {fileID: 8804477852297655886, guid: 67ed2c419cc5f490ebe14a1b3686fbe6, type: 3}
 --- !u!1001 &297300892216372880
 PrefabInstance:

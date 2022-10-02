@@ -7,7 +7,7 @@ using UnityEngine;
 [RequireComponent(typeof(AudioSource))]
 public class Weapon : MonoBehaviour
 {
-    private AudioSource audioData;
+    protected AudioSource audioData;
     public WeaponData weaponData;
     [NonSerialized] public float direction;
     protected float elapsedInterval;
@@ -15,7 +15,7 @@ public class Weapon : MonoBehaviour
     protected Animator animator;
 
     // Start is called before the first frame update
-    void Start()
+    protected virtual void Start()
     {
         audioData = gameObject.GetComponent<AudioSource>();
         elapsedInterval = weaponData.interval;
